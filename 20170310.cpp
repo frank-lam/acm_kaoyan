@@ -4,24 +4,25 @@
 // http://blog.csdn.net/candyliuxj/article/details/6313191
 
 #include <iostream>
-#include <stdio.h>
+#include <algorithm>
 #include <string>
 #include <string.h>
-#include <algorithm>
+#include <stdio.h>
 using namespace std;
-
-int main(){
-	char str[10];
-	int len;
-	while(scanf("%s",str)!=EOF){
-		len = strlen(str);		
-		do{
-			printf("%s\n",str);
-		}while(next_permutation(str,str+len));
-		puts("");
-	}
+ 
+int main()
+{
+    string str;
+    while(cin >> str){
+        printf("%s\n",str.c_str());
+        while (next_permutation(str.begin(),str.end()))
+        {
+            printf("%s\n",str.c_str());
+        }
+        puts("");
+    }
+    return 0;
 }
-
 
 
 2007年北京大学计算机研究生机试真题
@@ -47,7 +48,6 @@ int main(){
 	int n;
 	while(cin>> n){
 		for(int i=0;i<n;i++){
-			//scanf("%d %s",&rat[i].weight,&rat[i].color);
 			cin >> rat[i].weight >> rat[i].color;
 		}
 		for(int i=0;i<n;i++){
@@ -114,8 +114,5 @@ int main(){
 
 	return 0;
 }
-
-
-
 
 

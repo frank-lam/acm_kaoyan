@@ -50,3 +50,20 @@ int main()
     }
     return 0;
 }
+
+
+
+## memset用法
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main()
+{
+    // 不可以声明为 char *str = "http://c.biancheng.net";
+    char str[] = "http://c.biancheng.net";
+    memset(str, '-',7);
+    puts(str);
+    system("pause");
+    return EXIT_SUCCESS;
+}

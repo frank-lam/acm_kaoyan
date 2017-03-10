@@ -67,52 +67,42 @@ int main(){
 	return 0;
 }
 
+1114：神奇的口袋
 
-
-错误代码：
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 using namespace std;
 
-int main(){
-	int count;
-	int a[100];
-	string b[100];
+int N;
+int v[20];
+int WayNumber(int done,int w);
 
-	while(cin >> count){
-		int i=1;
-		while (i<=count){
-			cin >> a[i];
-			cin >> b[i];
-			i++;
-		}
+bool cmp(int a,int b){
+	return a<b;
+}
 
-		int temp_int;
-		string temp_str;
-		for(int i=1;i<=count;i++){
-			for(int j=i;j<=count; j++){
-				if(a[i]<a[j]){
-					temp_int=a[i];
-					a[i]=a[j];
-					a[j]=temp_int;
-
-					temp_str=b[i];
-					b[i]=b[j];
-					b[j]=temp_str;
-				}
-			}
-		}
-
-		for(int i=1;i<=count;i++){
-			cout << b[i] << endl;
-		}
+int main(){ 
+	while(cin >> N){
+		for(int i=0;i<N;i++)
+			cin >> v[i];
+		sort(v,v+N,cmp);
+		cout << WayNumber(0,40) << endl;
 	}
-
-
 	return 0;
 }
 
-
+int WayNumber(int done,int w){
+	int result=0;
+	if(w==0){
+		return 1;
+	}
+	for(int i=done;i<N;i++){
+		if(v[i] <= w){
+			result = result + WayNumber(i+1,w-v[i]);
+		}
+	}
+	return result;
+}

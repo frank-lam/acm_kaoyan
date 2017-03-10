@@ -1,3 +1,4 @@
+
 // ##1.全排列问题 STL的应用
 // 参考 http://www.slyar.com/blog/stl_next_permutation.html
 // C++库常用函数一览 - candyliuxj - 博客频道 - CSDN.NET

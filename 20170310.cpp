@@ -8,6 +8,9 @@
 #include <string>
 #include <string.h>
 #include <stdio.h>
+#include <stdlib.h> 
+#include <cmath>
+
 using namespace std;
  
 int main()
@@ -105,4 +108,39 @@ int WayNumber(int done,int w){
 		}
 	}
 	return result;
+}
+
+1113：二叉树
+http://ac.jobdu.com/problem.php?pid=1113
+
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main(){
+	int m,n,left,right;
+
+	while(cin >> m >> n){
+		if(m==0 || n==0){
+			break;
+		}
+		left=right=m;
+		int i=0,sum=0;
+		while(right<=n){
+
+			sum=sum+pow(2.0,i);
+			i++;
+			left=2*left;
+			right=2*right+1;
+		}
+		while(left<=n){
+			sum++;
+			left++;
+		}
+		cout << sum << endl;
+
+	}
+
+	return 0;
 }

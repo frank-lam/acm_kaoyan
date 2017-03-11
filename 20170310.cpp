@@ -144,3 +144,36 @@ int main(){
 
 	return 0;
 }
+
+
+
+1074：对称平方数
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+//获得相反数
+int invertOrder(int a){
+	int b=0;
+	while(a){
+		b=b*10+a%10;
+		a=a/10;
+	}
+	return b;
+}
+
+int main(){
+	int invertNum;
+	for(int i=0;i<=256;i++){
+		invertNum=invertOrder(i*i);
+		if(invertNum==i*i){
+			cout << i << endl;
+		}
+	}
+	return 0;
+}
+
+
+1075：斐波那契数列
